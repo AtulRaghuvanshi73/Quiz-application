@@ -2,39 +2,30 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { generateQuizQuestions, shuffleOptions, Question } from "@/data/questions";
 
-const questions = [
-  {
-    id: 1,
-    question: "What sound does a cat make?",
-    options: ["Bhau-Bhau", "Meow-Meow", "Oink-Oink"],
-    correctAnswer: "Meow-Meow",
-  },
-  {
-    id: 2,
-    question: "What would you probably find in your fridge?",
-    options: ["Shoes", "Ice Cream", "Books"],
-    correctAnswer: "Ice Cream",
-  },
-  {
-    id: 3,
-    question: "What color are bananas?",
-    options: ["Blue", "Yellow", "Red"],
-    correctAnswer: "Yellow",
-  },
-  {
-    id: 4,
-    question: "How many stars are in the sky?",
-    options: ["Two", "Infinite", "One Hundred"],
-    correctAnswer: "Infinite",
-  },
-];
+interface QuestionWithOptions extends Question {
+  options: string[];
+}
+
+const initializeQuestions = (): QuestionWithOptions[] => {
+  const baseQuestions = generateQuizQuestions(4);
+  return baseQuestions.map((question) => ({
+    ...question,
+    options: shuffleOptions(question),
+  }));
+};
 
 export default function Home() {
+  const [questions, setQuestions] = useState<QuestionWithOptions[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [displayScore, setDisplayScore] = useState(0);
+
+  useEffect(() => {
+    setQuestions(initializeQuestions());
+  }, []);
 
   const handleOptionSelect = (option: string) => {
     setSelectedAnswers((prev) => ({
@@ -63,6 +54,7 @@ export default function Home() {
     setCurrentQuestion(0);
     setSelectedAnswers({});
     setShowResults(false);
+    setQuestions(initializeQuestions());
   };
 
   const calculateScore = () => {
@@ -97,7 +89,19 @@ export default function Home() {
     } else {
       setDisplayScore(0);
     }
-  }, [showResults]);
+  }, [showResults, questions]);
+
+  if (questions.length === 0) {
+    return (
+      <div className="min-h-screen w-full flex items-center justify-center" style={{
+        background: "linear-gradient(180deg, #BECFEE 0%, #71C6E2 25%, #D9F4FA 50%, #BECFEE 100%)"
+      }}>
+        <div className="text-center">
+          <p className="text-white text-lg">Loading questions...</p>
+        </div>
+      </div>
+    );
+  }
 
   const isLastQuestion = currentQuestion === questions.length - 1;
   const isFirstQuestion = currentQuestion === 0;
