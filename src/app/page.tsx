@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const questions = [
   {
@@ -191,9 +190,9 @@ export default function Home() {
       <div 
         className="relative w-full max-w-[1250px] rounded-[48px] p-5"
         style={{
-          background: "linear-gradient(180deg, rgba(190, 207, 238, 0.5) 0%, rgba(113, 198, 226, 0.5) 25%, rgba(217, 244, 250, 0.5) 50%, rgba(190, 207, 238, 0.5) 100%)",
-          backdropFilter: "blur(40px)",
-          WebkitBackdropFilter: "blur(40px)",
+          background: "linear-gradient(180deg, rgba(190, 207, 238, 0.4) 0%, rgba(113, 198, 226, 0.4) 25%, rgba(217, 244, 250, 0.4) 50%, rgba(190, 207, 238, 0.4) 100%)",
+          backdropFilter: "blur(200px)",
+          WebkitBackdropFilter: "blur(200px)",
         }}
       >
         {/* Inner content card */}
@@ -238,11 +237,16 @@ export default function Home() {
 
           <div className="text-center mb-8">
             <h1 
-              className="text-[90px] leading-[1.1] tracking-[-4px] mb-6"
-              style={{ fontFamily: "var(--font-dm-serif), 'DM Serif Display', serif" }}
+              className="text-[90px] leading-[1.1] tracking-[-4px] mb-6 italic"
+              style={{ 
+                fontFamily: "var(--font-dm-serif), 'DM Serif Display', serif",
+                background: "linear-gradient(90deg, #15313D 0%, #3CABDA 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text"
+              }}
             >
-              <span className="italic text-[#1E6E8C]">Test Your</span>{" "}
-              <span className="italic text-[#71C6E2]">Knowledge</span>
+              Test Your Knowledge
             </h1>
             
             <div 
@@ -323,7 +327,7 @@ export default function Home() {
             </AnimatePresence>
 
             <div className="flex justify-end gap-3 mt-8">
-              {!isFirstQuestion && (
+              {!isFirstQuestion && !isLastQuestion && (
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -335,7 +339,12 @@ export default function Home() {
                   }}
                   aria-label="Previous question"
                 >
-                  <ChevronLeft className="w-6 h-6 text-[#1E6E8C]" />
+                  <img 
+                    src="/arrow_forward.svg" 
+                    alt="" 
+                    className="w-6 h-6"
+                    style={{ transform: "scaleX(-1)" }}
+                  />
                 </motion.button>
               )}
               
@@ -366,7 +375,11 @@ export default function Home() {
                   }}
                   aria-label="Next question"
                 >
-                  <ChevronRight className="w-6 h-6 text-[#1E6E8C]" />
+                  <img 
+                    src="/arrow_forward.svg" 
+                    alt="" 
+                    className="w-6 h-6"
+                  />
                 </motion.button>
               )}
             </div>
