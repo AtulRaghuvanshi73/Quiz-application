@@ -125,7 +125,18 @@ export default function Home() {
               border: "1px solid #D0E8EF"
             }}
           >
-            <span className="text-[#1E6E8C] font-medium">Keep Learning!</span>
+            <span 
+              className="text-[#333] font-medium" 
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontSize: "16px",
+                lineHeight: "10px",
+                letterSpacing: "-0.31px",
+                textAlign: "center"
+              }}
+            >
+              Keep Learning!
+            </span>
           </motion.div>
           
           <motion.h2 
@@ -133,11 +144,17 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-            className="text-4xl mb-2"
-            style={{ fontFamily: "var(--font-dm-serif), 'DM Serif Display', serif" }}
+            className="text-4xl mb-2 italic text-center"
+            style={{ 
+              fontFamily: "var(--font-dm-serif), 'DM Serif Display', serif",
+              background: "linear-gradient(90deg, #15313D 0%, #3CABDA 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              color: "#15313D"
+            }}
           >
-            <span className="italic text-[#1E6E8C]">Your</span>{" "}
-            <span className="italic text-[#5BA3B8]">Final score is</span>
+            Your Final score is
           </motion.h2>
           
           <motion.div
@@ -169,7 +186,7 @@ export default function Home() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleStartAgain}
-            className="mt-10 px-10 py-3 rounded-xl text-[#1E6E8C] font-medium text-base transition-all"
+            className="mt-10 px-10 py-3 rounded-xl text-[#1E6E8C] font-medium text-base transition-all block mx-auto"
             style={{
               background: "linear-gradient(89.72deg, #C6E9F7 0.09%, #E5F8FF 99.91%)",
               border: "1px solid #D0E8EF"
@@ -327,26 +344,25 @@ export default function Home() {
             </AnimatePresence>
 
             <div className="flex justify-end gap-3 mt-8">
-              {!isFirstQuestion && !isLastQuestion && (
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={handlePrev}
-                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all"
-                  style={{
-                    background: "linear-gradient(89.72deg, #C6E9F7 0.09%, #E5F8FF 99.91%)",
-                    border: "1px solid #96E5FF"
-                  }}
-                  aria-label="Previous question"
-                >
-                  <img 
-                    src="/arrow_forward.svg" 
-                    alt="" 
-                    className="w-6 h-6"
-                    style={{ transform: "scaleX(-1)" }}
-                  />
-                </motion.button>
-              )}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handlePrev}
+                disabled={isFirstQuestion}
+                className="w-12 h-12 rounded-xl flex items-center justify-center transition-all disabled:opacity-50"
+                style={{
+                  background: "linear-gradient(89.72deg, #C6E9F7 0.09%, #E5F8FF 99.91%)",
+                  border: "1px solid #96E5FF"
+                }}
+                aria-label="Previous question"
+              >
+                <img 
+                  src="/arrow_forward.svg" 
+                  alt="" 
+                  className="w-6 h-6"
+                  style={{ transform: "scaleX(-1)" }}
+                />
+              </motion.button>
               
               {isLastQuestion ? (
                 <motion.button
