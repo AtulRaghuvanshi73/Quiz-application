@@ -325,8 +325,8 @@ export default function Home() {
                         className="w-full py-5 px-8 rounded-xl text-center font-medium text-[#1E6E8C] transition-all duration-200"
                         style={{
                           background: isSelected 
-                            ? "linear-gradient(89.72deg, #C6E9F7 0.09%, #E5F8FF 99.91%)" 
-                            : "white",
+                            ? "linear-gradient(89.72deg, rgba(198, 233, 247, 0.1) 0.09%, rgba(229, 248, 255, 0.1) 99.91%)" 
+                            : "linear-gradient(89.72deg, rgba(198, 233, 247, 0.1) 0.09%, rgba(229, 248, 255, 0.1) 99.91%)",
                           border: isSelected 
                             ? "1px solid #96E5FF" 
                             : "1px solid #96E5FF"
