@@ -321,7 +321,7 @@ export default function Home() {
                     border: "1px solid #96E5FF"
                   }}
                 >
-                  <span className="text-[#1E6E8C] font-medium text-lg">
+                  <span className="text-black font-medium text-lg">
                     {currentQuestion + 1}. {questions[currentQuestion].question}
                   </span>
                 </div>
@@ -335,7 +335,7 @@ export default function Home() {
                         whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.99 }}
                         onClick={() => handleOptionSelect(option)}
-                        className="w-full py-5 px-8 rounded-xl text-center font-medium text-[#1E6E8C] transition-all duration-200"
+                        className="w-full py-5 px-8 rounded-xl text-center font-medium text-black transition-all duration-200"
                         style={{
                           background: isSelected 
                             ? "linear-gradient(89.72deg, #C6E9F7 0.09%, #E5F8FF 99.91%)" 
@@ -383,7 +383,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                   onClick={handleSubmit}
                   disabled={Object.keys(selectedAnswers).length !== questions.length}
-                  className="px-8 py-3 rounded-xl text-[#1E6E8C] font-medium transition-all disabled:opacity-50"
+                  className="px-8 py-3 rounded-xl text-black font-medium transition-all disabled:opacity-50"
                   style={{
                     background: "linear-gradient(89.72deg, #C6E9F7 0.09%, #E5F8FF 99.91%)",
                     border: "1px solid #96E5FF"
