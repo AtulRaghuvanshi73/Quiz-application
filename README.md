@@ -1,6 +1,6 @@
 # Quiz Application
 
-![Website Screenshot](./public/website-screenshot.png)
+![Website Screenshot](./public/website-screenshot-1.png)
 
 ## Project Overview
 
