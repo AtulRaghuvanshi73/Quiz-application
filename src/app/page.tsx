@@ -237,29 +237,28 @@ export default function Home() {
 
           <div className="text-center mb-8">
             <h1 
-              className="text-[90px] leading-[1.1] tracking-[-4px] mb-6 italic"
+              className="text-[80px] leading-[1.2] tracking-tight mb-6 italic px-4"
               style={{ 
                 fontFamily: "var(--font-dm-serif), 'DM Serif Display', serif",
                 background: "linear-gradient(90deg, #15313D 0%, #3CABDA 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                backgroundClip: "text"
+                backgroundClip: "text",
+                color: "#15313D"
               }}
             >
               Test Your Knowledge
             </h1>
             
-            <div 
-              className="inline-block px-6 py-2 rounded-full"
-              style={{
-                background: "linear-gradient(89.72deg, #C6E9F7 0.09%, #E5F8FF 99.91%)",
-                border: "1px solid #96E5FF"
-              }}
-            >
-              <span className="text-[#1E6E8C] text-sm font-medium">
-                Answer all questions to see your results
-              </span>
-            </div>
+          <p className="text-[#333] font-medium" style={{
+            fontFamily: "'Manrope', sans-serif",
+            fontSize: "16px",
+            lineHeight: "10px",
+            letterSpacing: "-0.31px",
+            textAlign: "center"
+          }}>
+              Answer all questions to see your results
+            </p>
           </div>
 
           <div className="flex gap-4 justify-center mb-10 px-8">
