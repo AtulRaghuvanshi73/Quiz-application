@@ -188,20 +188,21 @@ export default function Home() {
     }}>
       {/* Outer blur frame */}
       <div 
-        className="relative w-full max-w-[1250px] rounded-[48px] p-5"
+        className="relative w-full max-w-[1250px] rounded-[48px] p-7"
         style={{
-          background: "linear-gradient(180deg, rgba(190, 207, 238, 0.4) 0%, rgba(113, 198, 226, 0.4) 25%, rgba(217, 244, 250, 0.4) 50%, rgba(190, 207, 238, 0.4) 100%)",
-          backdropFilter: "blur(200px)",
-          WebkitBackdropFilter: "blur(200px)",
+          background: "rgba(255, 255, 255, 0.25)",
+          backdropFilter: "blur(40px)",
+          WebkitBackdropFilter: "blur(40px)",
+          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.06)"
         }}
       >
         {/* Inner content card */}
         <div 
           className="relative w-full rounded-[40px] p-12 overflow-visible"
           style={{
-            background: "linear-gradient(180deg, rgba(244, 250, 255, 0.95) 0%, rgba(230, 245, 250, 0.95) 50%, rgba(244, 250, 255, 0.95) 100%)",
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.08)",
-            border: "1px solid rgba(150, 229, 255, 0.4)"
+            background: "rgba(255, 255, 255, 0.9)",
+            boxShadow: "0 20px 40px rgba(0, 0, 0, 0.05)",
+            border: "1px solid rgba(255, 255, 255, 0.6)"
           }}
         >
           {isFirstQuestion && (
