@@ -207,7 +207,7 @@ export default function Home() {
         >
           {isFirstQuestion && (
             <>
-              <div className="absolute -left-1 bottom-46">
+              <div className="absolute -left-1 bottom-46 bg-white">
                 <div className="relative">
                   <div 
                     className="absolute -top-4 left-1/2 -translate-x-1/2"
@@ -217,24 +217,10 @@ export default function Home() {
                     }}
                   >
                     <img 
-                      src="/outline-vector.svg" 
+                      src="/best_of_luck_image.svg" 
                       alt="" 
                       className="absolute inset-0 w-full h-full"
                     />
-                    <span 
-                      className="absolute inset-0 flex items-center justify-center text-[#1E6E8C]"
-                      style={{ 
-                        fontFamily: "var(--font-caveat-brush), 'Caveat Brush', cursive", 
-                        fontWeight: 400,
-                        fontSize: "32.73px",
-                        lineHeight: "19.64px",
-                        letterSpacing: "-0.82px",
-                        textAlign: "center",
-                        paddingBottom: "8px"
-                      }}
-                    >
-                      Best of Luck!
-                    </span>
                   </div>
                 </div>
               </div>
