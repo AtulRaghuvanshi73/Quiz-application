@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quiz Application
+
+![Website Screenshot](./public/website-screenshot.png)
+
+## Project Overview
+
+A modern, interactive quiz application built with [Next.js](https://nextjs.org) and [React](https://react.dev). This frontend project features a responsive quiz interface with smooth animations, real-time score tracking, and a polished user experience using the Shadcn UI component library.
+
+## Features
+
+- **Interactive Quiz**: Engaging multiple-choice quiz with smooth animations
+- **Real-time Score Tracking**: Track your progress as you answer questions
+- **Responsive Design**: Mobile-friendly interface that works on all devices
+- **Modern UI Components**: Built with Shadcn UI and Radix UI primitives
+- **Smooth Animations**: Framer Motion animations for enhanced user experience
+- **Dark Mode Support**: Next Themes integration for light/dark mode toggle
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org) 15.5.7
+- **UI Library**: [React](https://react.dev) 19.2.0
+- **Component Library**: [Shadcn UI](https://ui.shadcn.com/)
+- **Styling**: Tailwind CSS
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **Form Handling**: React Hook Form
+- **Icons**: Lucide React
+- **Theme**: Next Themes
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 16+ or Bun runtime
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+# or
+bun install
+```
+
+### Development Server
+
+Run the development server:
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
-pnpm dev
-# or
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `bun dev` - Start development server with Turbopack
+- `bun build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Quiz component
+│   └── globals.css     # Global styles
+├── components/
+│   └── ui/             # Shadcn UI components
+└── hooks/              # Custom React hooks
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Key Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The main quiz application is built with:
+- **Framer Motion**: For smooth page transitions and animations
+- **React State Management**: For tracking quiz progress and scores
+- **Responsive Layouts**: Mobile-first design approach
