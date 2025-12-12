@@ -124,7 +124,7 @@ export default function Home() {
               background: "linear-gradient(89.72deg, #E8F4F8 0.09%, #F5FBFD 99.91%)",
               border: "1px solid #D0E8EF"
             }}
-          >
+          > 
             <span 
               className="text-[#333] font-medium" 
               style={{
@@ -281,14 +281,27 @@ export default function Home() {
 
           <div className="flex gap-4 justify-center mb-10 px-8">
             {questions.map((_, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex-1 h-1 rounded-full transition-all duration-300"
+                initial={{ width: "180px" }}
+                animate={{ width: index <= currentQuestion ? "180px" : "180px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="transition-all duration-300 relative"
                 style={{
-                  background: index <= currentQuestion ? "#1E6E8C" : "#E5E5E5",
-                  maxWidth: "180px"
+                  height: "0px",
+                  opacity: 1
                 }}
-              />
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "0px",
+                    borderTop: index <= currentQuestion ? "8px solid #1E6E8C" : "8px solid #E5E5E5",
+                    borderRadius: "4px",
+                    transition: "all 0.6s ease-out"
+                  }}
+                />
+              </motion.div>
             ))}
           </div>
 
@@ -325,7 +338,7 @@ export default function Home() {
                         className="w-full py-5 px-8 rounded-xl text-center font-medium text-[#1E6E8C] transition-all duration-200"
                         style={{
                           background: isSelected 
-                            ? "linear-gradient(89.72deg, rgba(198, 233, 247, 0.1) 0.09%, rgba(229, 248, 255, 0.1) 99.91%)" 
+                            ? "linear-gradient(89.72deg, #C6E9F7 0.09%, #E5F8FF 99.91%)" 
                             : "linear-gradient(89.72deg, rgba(198, 233, 247, 0.1) 0.09%, rgba(229, 248, 255, 0.1) 99.91%)",
                           border: isSelected 
                             ? "1px solid #96E5FF" 
